@@ -24,10 +24,15 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # Install a VS Code extension:
 # Note: we use a different marketplace than VS Code. See https://github.com/cdr/code-server/blob/main/docs/FAQ.md#differences-compared-to-vs-code
-# RUN code-server --install-extension esbenp.prettier-vscode
+RUN code-server --install-extension ms-ceintl.vscode-language-pack-zh-hans
+RUN code-server --install-extension formulahendry.code-runner
+RUN code-server --install-extension ms-python.python
+RUN code-server --install-extension ms-vscode.cpptools
+RUN code-server --install-extension yzhang.markdown-all-in-one
+RUN code-server --install-extension shd101wyy.markdown-preview-enhanced
 
 # Install apt packages:
-# RUN sudo apt-get install -y ubuntu-make
+RUN sudo apt-get install wget
 
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
