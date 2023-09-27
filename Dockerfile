@@ -10,7 +10,7 @@ COPY deploy-container/settings.json .local/share/code-server/User/settings.json
 ENV SHELL=/bin/bash
 
 # Install unzip + rclone (support for remote filesystem)
-RUN sudo apt-get update && sudo apt-get install unzip -y && sudo apt-get install gcc && sudo apt-get install g++ && sudo apt-get install gdb && sudo apt-get install python3
+RUN sudo apt-get update && sudo apt-get install unzip -y && sudo apt-get install gcc -y && sudo apt-get install g++ -y && sudo apt-get install gdb -y && sudo apt-get install python3 -y
 RUN curl https://rclone.org/install.sh | sudo bash
 
 # Copy rclone tasks to /tmp, to potentially be used
